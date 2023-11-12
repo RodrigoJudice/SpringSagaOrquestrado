@@ -35,11 +35,11 @@ public class DebitInventoryUseCase implements DebitInventoryInputPort {
 
       inventory.debitQuantity(sale.getQuantity());
       updateInventoryOutputPort.update(inventory);
-      sendToKafkaOutputPort.send(sale, SaleEvent.UPDATED_INVENTORY);
+      sendToKafkaOutputPort.send(sale, SaleEvent.INVENTORY_PREPARED);
 
     } catch (Exception e) {
       log.error("Houve um erro = {}", e.getMessage());
-      sendToKafkaOutputPort.send(sale, SaleEvent.ROLLBACK_INVENTORY);
+      sendToKafkaOutputPort.send(sale, SaleEvent.INVENTORY_ERROR);
     }
   }
 
