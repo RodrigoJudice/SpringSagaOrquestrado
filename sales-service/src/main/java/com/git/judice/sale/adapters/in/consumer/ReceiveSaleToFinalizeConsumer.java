@@ -17,7 +17,7 @@ public class ReceiveSaleToFinalizeConsumer {
 
     @KafkaListener(topics = "tp-saga-sale", groupId = "sale-finalize")
     public void receive(SaleMessage saleMessage) {
-        if (SaleEvent.VALIDATED_PAYMENT.equals(saleMessage.getEvent())) {
+        if (SaleEvent.FINALIZE_SALE.equals(saleMessage.getEvent())) {
             log.info("Finalizando a venda...");
             finalizeSaleInputPort.finalize(saleMessage.getSale());
             log.info("Venda finalizada com sucesso.");

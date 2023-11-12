@@ -13,9 +13,10 @@ import org.springframework.stereotype.Component;
 public class SendCreatedSaleAdapter implements SendCreatedSaleOutputPort {
 
     private final KafkaTemplate<String, SaleMessage> kafkaTemplate;
+
     @Override
     public void send(Sale sale, SaleEvent event) {
-        var saleMessage = new SaleMessage(sale,event);
-        kafkaTemplate.send("tp-saga-sale", saleMessage);
+        var saleMessage = new SaleMessage(sale, event);
+        kafkaTemplate.send("tp-saga-orchestrator", saleMessage);
     }
 }
