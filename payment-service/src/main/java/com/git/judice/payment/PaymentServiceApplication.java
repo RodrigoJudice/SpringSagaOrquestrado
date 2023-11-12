@@ -1,5 +1,5 @@
 /*
- Git : https://github.com/DaniloArantesSilva/orchestrator-sale-service
+ Git : https://github.com/DaniloArantesSilva/orchestrator-payment-service
  */
 package com.git.judice.payment;
 

@@ -17,10 +17,10 @@ public class ReceiveSaleToPaymentConsumer {
 
   private final SalePaymentInputPort salePaymentInputPort;
 
-  @KafkaListener(topics = "tp-saga-sale", groupId = "payment")
+  @KafkaListener(topics = "tp-saga-payment", groupId = "payment")
   public void receive(SaleMessage saleMessage) {
 
-    if (SaleEvent.UPDATED_INVENTORY.equals(saleMessage.getEvent())) {
+    if (SaleEvent.EXECUTE_PAYMENT.equals(saleMessage.getEvent())) {
       log.info("Início do pagamento.");
       salePaymentInputPort.payment(saleMessage.getSale());
       log.info("Fim do pagamento.");

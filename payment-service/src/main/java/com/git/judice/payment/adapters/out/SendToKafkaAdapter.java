@@ -14,12 +14,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SendToKafkaAdapter implements SendToKafkaOutputPort {
 
-    private final KafkaTemplate<String, SaleMessage> kafkaTemplate;
+  private final KafkaTemplate<String, SaleMessage> kafkaTemplate;
 
-    @Override
-    public void send(Sale sale, SaleEvent event) {
-        var saleMessage = new SaleMessage(sale, event);
-        kafkaTemplate.send("tp-saga-sale", saleMessage);
-    }
+  @Override
+  public void send(Sale sale, SaleEvent event) {
+    var saleMessage = new SaleMessage(sale, event);
+    kafkaTemplate.send("tp-saga-orchestrator", saleMessage);
+  }
 
 }
