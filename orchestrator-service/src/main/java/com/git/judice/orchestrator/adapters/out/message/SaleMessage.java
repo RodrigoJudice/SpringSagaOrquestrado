@@ -2,6 +2,7 @@ package com.git.judice.orchestrator.adapters.out.message;
 
 import com.git.judice.orchestrator.application.core.domain.Sale;
 import com.git.judice.orchestrator.application.core.domain.enums.SaleEvent;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

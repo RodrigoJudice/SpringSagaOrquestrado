@@ -1,6 +1,7 @@
 package com.git.judice.orchestrator.config.kafka;
 
 import com.git.judice.orchestrator.adapters.out.message.SaleMessage;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Deserializer;
@@ -16,6 +17,7 @@ public class CustomDeserializer implements Deserializer<SaleMessage> {
         return null;
       }
       return objectMapper.readValue(new String(data, "UTF-8"), SaleMessage.class);
+
     } catch (Exception e) {
       throw new SerializationException("Error when deserializing byte[] to SaleMessage");
     }

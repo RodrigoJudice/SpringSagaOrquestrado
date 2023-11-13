@@ -1,13 +1,15 @@
 package com.git.judice.orchestrator.application.core.domain;
 
-import java.math.BigDecimal;
-
 import com.git.judice.orchestrator.application.core.domain.enums.SaleStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Sale {
 
   private Integer id;

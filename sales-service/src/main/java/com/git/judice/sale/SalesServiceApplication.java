@@ -1,8 +1,7 @@
 /*
 	Github:
-	https://github.com/DaniloArantesSilva/sale-service
+	https://github.com/DaniloArantesSilva/orchestrator-sale-service
 */
-
 
 package com.git.judice.sale;
 

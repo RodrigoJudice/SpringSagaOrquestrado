@@ -1,5 +1,7 @@
 package com.git.judice.sale.adapters.in.controller.request;
 
+import java.math.BigDecimal;
+
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,4 +17,7 @@ public class SaleRequest {
     private Integer productId;
     @NotNull
     private Integer quantity;
+    @NotNull
+    private BigDecimal value;
+
 }

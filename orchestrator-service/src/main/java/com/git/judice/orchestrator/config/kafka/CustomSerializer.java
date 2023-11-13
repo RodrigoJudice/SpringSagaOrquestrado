@@ -1,6 +1,7 @@
 package com.git.judice.orchestrator.config.kafka;
 
 import com.git.judice.orchestrator.adapters.out.message.SaleMessage;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Serializer;

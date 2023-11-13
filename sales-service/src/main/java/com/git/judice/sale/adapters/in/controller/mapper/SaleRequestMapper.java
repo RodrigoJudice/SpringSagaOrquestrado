@@ -9,6 +9,5 @@ import org.mapstruct.Mapping;
 public interface SaleRequestMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "status", ignore = true)
-    @Mapping(target = "value", ignore = true)
     Sale toSale(SaleRequest saleRequest);
 }
